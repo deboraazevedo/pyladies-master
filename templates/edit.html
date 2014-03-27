@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <div class="row">
+    <div class="wide column">
+      <div class="ui horizontal inverted divider"><i class="heart icon"></i></div>
+      <h2 class="ui header">
+        Edit Serie "#2 Lorem Ipsum"
+      </h2>
+      <div class="ui form segment">
+        <form action="/series/{{ serie._id }}/edit/" method="POST" enctype="multipart/form-data">
+         
+         <div class="field ">
+            {{ form.name.label }}
+	    {{ form.name }}
+
+          </div>
+
+          <div class="field ">
+             {{ form.description.label }}
+	     {{ form.description }}
+
+          </div>
+
+          <div class="field ">
+             {{ form.image.label }}
+	     {{ form.image }}
+
+          </div>
+
+          <button type="submit" class="ui blue submit button">Submit</button>
+          <div class="ui submit button"><a href="/">Cancel</a></div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

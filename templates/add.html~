@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <div class="row">
+    <div class="wide column">
+      <div class="ui horizontal inverted divider"><i class="heart icon"></i></div>
+      <h2 class="ui header">
+        Add Serie
+      </h2>
+      <div class="ui form segment">
+        <form action="/series/add/" method="POST" enctype="multipart/form-data">
+          <input id="csrf_token" name="csrf_token" type="hidden" value="1395280267.73##4d3ed1ea61cafcffd351accf58094e03f1f73425">
+
+          <div class="field ">
+            {{ form.name.label }}
+	    {{ form.name }}
+
+          </div>
+
+          <div class="field ">
+             {{ form.description.label }}
+	     {{ form.descriiption }}
+
+          </div>
+
+          <div class="field ">
+             {{ form.image.label }}
+	    {{ form.image }}
+
+          </div>
+
+          <button type="submit" class="ui blue submit button">Submit</button>
+          <div class="ui submit button"><a href="/">Cancel</a></div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}
